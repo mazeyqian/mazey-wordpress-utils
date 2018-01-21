@@ -2,8 +2,8 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: __dirname + '/app/main.js',
     output: {
-        path: __dirname + '/public',
-        filename: 'bundle.js'
+        path: __dirname + '/build',
+        filename: 'bundle-[hash].js'
     },
 
     devServer: {
@@ -38,5 +38,19 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.BannerPlugin('版权所有，翻版必究！'),
+        new HtmlWebpackPlugin({
+            template: __dirname + "/app/index.temp.html"
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new ExtractTextPlugin("style.css"),
+        new CleanWebpackPlugin("build/*.*", {
+            root: __dirname,
+            verbose: true,
+            dry: false
+        })
+    ]
 };
