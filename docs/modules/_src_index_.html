@@ -73,7 +73,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_index_.html#lazyloadimages" class="tsd-kind-icon">lazy<wbr>Load<wbr>Images</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_index_.html#hideheaderintoc" class="tsd-kind-icon">hide<wbr>Header<wbr>InTOC</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_index_.html#hidesidebar" class="tsd-kind-icon">hide<wbr>Sidebar</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,62 +83,56 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="lazyloadimages" class="tsd-anchor"></a>
-					<h3>lazy<wbr>Load<wbr>Images</h3>
+					<a name="hideheaderintoc" class="tsd-anchor"></a>
+					<h3>hide<wbr>Header<wbr>InTOC</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">lazy<wbr>Load<wbr>Images<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>container<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>defaultImg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">hide<wbr>Header<wbr>InTOC<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mazeyqian/mazey-wordpress-utils/blob/112d45d/src/index.ts#L21">src/index.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/mazeyqian/mazey-wordpress-utils/blob/b93210b/src/index.ts#L10">src/index.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>method</dt>
-									<dd><p>lazyLoadImages</p>
+									<dd><p>hideHeaderInTOC</p>
 									</dd>
 									<dt>description</dt>
-									<dd><p>Lazey load images.</p>
+									<dd><p>Hide header when TOC shows.</p>
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> __namedParameters: <span class="tsd-signature-symbol">{ </span>container<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>defaultImg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = {}</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>container<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>A String can be used by <code>document.querySelector()</code>, such as: <code>.box</code> or <code>#entry-content</code>.</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>default<wbr>Img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Default load image, such as: <code>https://i.mazey.net/asset/default/201909170739.jpg</code>.</p>
-											</div>
-										</li>
-										<li class="tsd-parameter">
-											<h5>images<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>img<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Data contains images.
-													[
-													{
-													name: &#39;Example1&#39;,
-													img: [
-													&#39;<a href="https://i.mazey.net/asset/default/suzumiya-haruhi1.jpg&#39;">https://i.mazey.net/asset/default/suzumiya-haruhi1.jpg&#39;</a>,
-													]
-													}
-												]</p>
-											</div>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true or false</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hidesidebar" class="tsd-anchor"></a>
+					<h3>hide<wbr>Sidebar</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">hide<wbr>Sidebar<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mazeyqian/mazey-wordpress-utils/blob/b93210b/src/index.ts#L42">src/index.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>method</dt>
+									<dd><p>hideSidebar</p>
+									</dd>
+									<dt>description</dt>
+									<dd><p>Hide sidebar.</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p>true or false</p>
 						</li>
@@ -159,7 +154,10 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_index_.html#lazyloadimages" class="tsd-kind-icon">lazy<wbr>Load<wbr>Images</a>
+						<a href="_src_index_.html#hideheaderintoc" class="tsd-kind-icon">hide<wbr>Header<wbr>InTOC</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_src_index_.html#hidesidebar" class="tsd-kind-icon">hide<wbr>Sidebar</a>
 					</li>
 				</ul>
 			</nav>

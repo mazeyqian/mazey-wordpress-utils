@@ -1,6 +1,6 @@
 {
   "name": "mazey-wordpress-utils",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Wordpress utilities.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -11,7 +11,7 @@
     "build": "npx rollup -c",
     "test": "jest",
     "docs": "npx typedoc --out docs/ src/",
-    "release": "npm run build && npm publish",
+    "release": "npm run build && npm run docs && npm publish",
     "lint-and-fix": "eslint ./src/index.ts --ext 'ts,tsx' --fix",
     "check-health": "npm run build && npm run docs && npm run test"
   },
