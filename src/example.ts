@@ -1,9 +1,7 @@
 import {
-  // pass
+  hideHeaderInTOC
  } from './index';
 
-// 数字测试
-// console.log('Test:', foo('foo', 'bar'));
-/*
-pass
-*/
+// 测试
+console.log('Test:', hideHeaderInTOC({ urlContainList: [ '8080' ] }));
+

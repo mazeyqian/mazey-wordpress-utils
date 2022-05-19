@@ -1,6 +1,6 @@
 {
   "name": "mazey-wordpress-utils",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Wordpress utilities.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
@@ -75,7 +75,6 @@
   "dependencies": {
     "@babel/runtime-corejs3": "7.11.2",
     "core-js": "3.6.5",
-    "jquery": "^3.6.0",
     "mazey": "^1.4.39"
   }
 }

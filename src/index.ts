@@ -5,9 +5,11 @@ import { getQueryParam } from 'mazey';
 /**
  * @method hideHeaderInTOC
  * @description Hide header when TOC shows.
+ * @param {Array} urlContainList string list
  * @return {Boolean} true or false
  */
-export function hideHeaderInTOC(): boolean {
+export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue' ] } = {}): boolean {
+  const isHideHeader = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
   const EzTocContainerDom = document.querySelector('#ez-toc-container');
   const SiteHeaderDom: any = document.querySelector('.site-header');
   // Handle Event
@@ -22,7 +24,7 @@ export function hideHeaderInTOC(): boolean {
       if (visibility !== 'visible') SiteHeaderDom.style.visibility = 'visible';
     }
   }
-  if (EzTocContainerDom && SiteHeaderDom) {
+  if (isHideHeader && EzTocContainerDom && SiteHeaderDom) {
     // Listen
     window.addEventListener('scroll', handleScroll);
     // Init when page loaded
@@ -30,22 +32,36 @@ export function hideHeaderInTOC(): boolean {
       // console.log('Init when page loaded');
       handleScroll();
     }, 25);
+    return true;
   }
-  return true;
+  return false;
 }
 
 /**
  * @method hideSidebar
  * @description Hide sidebar.
+ * @param {Array} urlContainList string list
  * @return {Boolean} true or false
  */
-export function hideSidebar(): boolean {
-  const hideSidebarParam = getQueryParam('hide_sidebar');
+export function hideSidebar({ urlContainList = [ 'hide_sidebar' ] } = {}): boolean {
+  const isHideSidebar = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
   const secondaryDom: any = document.querySelector('#secondary');
   const primaryDom: any = document.querySelector('#primary');
-  if (hideSidebarParam && secondaryDom && primaryDom) {
+  if (isHideSidebar && secondaryDom && primaryDom) {
     secondaryDom.style.display = 'none';
     primaryDom.style.width = '100%';
+    return true;
   }
-  return true;
+  return false;
+}
+
+/**
+ * @method isIncludeInUrl
+ * @description Determine the result of including the string.
+ * @param {String} urlContainString content
+ * @return {Boolean} true or false
+ */
+ export function isIncludeInUrl({ urlContainString = '' } = {}): boolean {
+  const Url = location.href;
+  return Url.includes(urlContainString);
 }

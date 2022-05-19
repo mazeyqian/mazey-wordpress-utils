@@ -25,7 +25,9 @@ Hide Sidebar.
 ```
 import { hideSidebar } from 'mazey-wordpress-utils';
 
-hideSidebar();
+hideSidebar({
+  urlContainList: [ 'hide_sidebar' ], // It's a list for String in URL, `[ 'hide_sidebar' ]` is the default value.
+});
 ```
 
 Hide Header.
@@ -33,7 +35,9 @@ Hide Header.
 ```
 import { hideHeaderInTOC } from 'mazey-wordpress-utils';
 
-hideHeaderInTOC();
+hideHeaderInTOC({
+  urlContainList: [ 'str1' ], // It's a list for String in URL, `[ 'urlContainListDefaultValue' ]` is the default value.
+});
 ```
 
 ## Develop

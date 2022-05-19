@@ -82,12 +82,16 @@
 				<p>Hide Sidebar.</p>
 				<pre><code><span class="hljs-keyword">import</span> { hideSidebar } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mazey-wordpress-utils&#x27;</span>;
 
-hideSidebar();
+hideSidebar({
+  urlContainList: [ <span class="hljs-string">&#x27;hide_sidebar&#x27;</span> ], <span class="hljs-comment">// It&#x27;s a list for String in URL, `[ &#x27;hide_sidebar&#x27; ]` is the default value.</span>
+});
 </code></pre>
 				<p>Hide Header.</p>
 				<pre><code><span class="hljs-keyword">import</span> { hideHeaderInTOC } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mazey-wordpress-utils&#x27;</span>;
 
-hideHeaderInTOC();
+hideHeaderInTOC({
+  urlContainList: [ <span class="hljs-string">&#x27;str1&#x27;</span> ], <span class="hljs-comment">// It&#x27;s a list for String in URL, `[ &#x27;urlContainListDefaultValue&#x27; ]` is the default value.</span>
+});
 </code></pre>
 				<a href="#develop" id="develop" style="color: inherit; text-decoration: none;">
 					<h2>Develop</h2>
