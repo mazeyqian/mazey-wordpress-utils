@@ -1,6 +1,6 @@
 /* Function */
 
-import { getQueryParam } from 'mazey';
+import { throttle } from 'mazey';
 
 /**
  * @method hideHeaderInTOC
@@ -9,8 +9,9 @@ import { getQueryParam } from 'mazey';
  * @return {Boolean} true or false
  */
 export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue' ] } = {}): boolean {
-  const isHideHeader = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
-  const EzTocContainerDom = document.querySelector('#ez-toc-container');
+  const isIncludeUrls = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
+  const isEzTocContainerDomExist = document.querySelector('#ez-toc-container');
+  const isHideHeader = isIncludeUrls || isEzTocContainerDomExist;
   const SiteHeaderDom: any = document.querySelector('.site-header');
   // Handle Event
   function handleScroll () {
@@ -24,9 +25,9 @@ export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue
       if (visibility !== 'visible') SiteHeaderDom.style.visibility = 'visible';
     }
   }
-  if (isHideHeader && EzTocContainerDom && SiteHeaderDom) {
+  if (isHideHeader && SiteHeaderDom) {
     // Listen
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttle(handleScroll, 50, { leading: true }));
     // Init when page loaded
     setTimeout(() => {
       // console.log('Init when page loaded');

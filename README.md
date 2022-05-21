@@ -30,7 +30,12 @@ hideSidebar({
 });
 ```
 
-Hide Header.
+Hide Header, the page will hide Header when it meets one of these two conditions:
+
+- Use WordPress Plugin [Easy Table of Contents](https://wordpress.org/plugins/easy-table-of-contents/) and open it in this page.
+- The page's URL is matched with one of the `urlContainList`.
+
+https://wordpress.org/plugins/easy-table-of-contents/
 
 ```
 import { hideHeaderInTOC } from 'mazey-wordpress-utils';
