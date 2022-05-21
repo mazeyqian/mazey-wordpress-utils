@@ -86,7 +86,12 @@ hideSidebar({
   urlContainList: [ <span class="hljs-string">&#x27;hide_sidebar&#x27;</span> ], <span class="hljs-comment">// It&#x27;s a list for String in URL, `[ &#x27;hide_sidebar&#x27; ]` is the default value.</span>
 });
 </code></pre>
-				<p>Hide Header.</p>
+				<p>Hide Header, the page will hide Header when it meets one of these two conditions:</p>
+				<ul>
+					<li>Use WordPress Plugin <a href="https://wordpress.org/plugins/easy-table-of-contents/">Easy Table of Contents</a> and open it in this page.</li>
+					<li>The page&#39;s URL is matched with one of the <code>urlContainList</code>.</li>
+				</ul>
+				<p><a href="https://wordpress.org/plugins/easy-table-of-contents/">https://wordpress.org/plugins/easy-table-of-contents/</a></p>
 				<pre><code><span class="hljs-keyword">import</span> { hideHeaderInTOC } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mazey-wordpress-utils&#x27;</span>;
 
 hideHeaderInTOC({
