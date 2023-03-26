@@ -20,7 +20,7 @@ npm install mazey-wordpress-utils --save
 
 ## Usage
 
-Hide Sidebar.
+### Hide Sidebar
 
 ```
 import { hideSidebar } from 'mazey-wordpress-utils';
@@ -30,7 +30,9 @@ hideSidebar({
 });
 ```
 
-Hide Header, the page will hide Header when it meets one of these two conditions:
+### Hide Header
+
+The page will hide Header when it meets one of these two conditions:
 
 - Use WordPress Plugin [Easy Table of Contents](https://wordpress.org/plugins/easy-table-of-contents/) and open it in this page.
 - The page's URL is matched with one of the `urlContainList`.
