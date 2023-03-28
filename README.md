@@ -8,7 +8,7 @@
 [l-image]: https://img.shields.io/npm/l/mazey-wordpress-utils
 [l-url]: https://github.com/mazeyqian/mazey-wordpress-utils
 
-Wordpress utilities.
+WordPress utilities.
 
 ## Install
 
@@ -45,7 +45,7 @@ hideHeaderInTOC({
 });
 ```
 
-## Develop
+## Contributing
 
 ```
 # dev

@@ -1,7 +1,7 @@
 {
   "name": "mazey-wordpress-utils",
   "version": "1.1.0",
-  "description": "Wordpress utilities.",
+  "description": "WordPress utilities.",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "typings": "lib/index.d.ts",
