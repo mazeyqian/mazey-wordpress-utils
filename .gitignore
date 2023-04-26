@@ -12,6 +12,7 @@ doc/
 .sass-cache/
 undefined/
 temp/
+package-lock.json
 
 # Editor directories and files
 .idea
