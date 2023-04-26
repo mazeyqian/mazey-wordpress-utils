@@ -20,7 +20,7 @@ npm install mazey-wordpress-utils --save
 
 ## Usage
 
-### Hide Sidebar
+### hideSidebar
 
 ```
 import { hideSidebar } from 'mazey-wordpress-utils';
@@ -30,7 +30,7 @@ hideSidebar({
 });
 ```
 
-### Hide Header
+### hideHeaderInTOC
 
 The page will hide Header when it meets one of these two conditions:
 
@@ -43,6 +43,17 @@ import { hideHeaderInTOC } from 'mazey-wordpress-utils';
 hideHeaderInTOC({
   urlContainList: [ 'str1' ], // It's a list for String in URL, `[ 'urlContainListDefaultValue' ]` is the default value.
 });
+```
+
+### setImgWidthHeight
+
+Set img width and height.
+
+```
+import { setImgWidthHeight } from 'mazey-wordpress-utils';
+
+// Call the function to set the width and height of all img elements
+setImgWidthHeight();
 ```
 
 ## Contributing

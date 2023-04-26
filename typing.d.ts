@@ -5,3 +5,8 @@
 
 // mazey
 // declare module 'mazey';
+
+interface Window {
+  $: any;
+  jQuery: any;
+}
