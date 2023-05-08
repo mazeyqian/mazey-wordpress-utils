@@ -86,13 +86,14 @@ export function setImgWidthHeight(): boolean {
   const $ = window.jQuery || window.$;
   if ($) {
     $('img').each(function () {
-      const src = $(this).attr('src');
-      // const width = src.match(/width=(\d+)/);
-      // const height = src.match(/height=(\d+)/);
+      const $this = $(this);
+      if (!$this) return;
+      const src = $this.attr('src');
+      if (!src) return;
       const width = src.match(/width=([0-9]+[a-z%]+)/);
       const height = src.match(/height=([0-9]+[a-z%]+)/);
-      if (width && width[1]) $(this).width(width[1]);
-      if (height && height[1]) $(this).height(height[1]);
+      if (width && width[1]) $this.width(width[1]);
+      if (height && height[1]) $this.height(height[1]);
     });
     return true;
   }

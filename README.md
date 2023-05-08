@@ -64,7 +64,4 @@ npm run dev
 
 # build
 npm run build
-
-# documentation
-npm run docs
 ```
