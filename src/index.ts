@@ -5,20 +5,31 @@ import { throttle } from 'mazey';
 /**
  * Hide header when TOC shows.
  * 
- * @param {Array} urlContainList string list
- * @return {Boolean} true or false
+ * @param {array} options.urlContainList string list
+ * @param {string} options.headerSelector string
+ * @return {boolean} true or false
  */
-export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue' ] } = {}): boolean {
-  const isIncludeUrls = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
+export function hideHeaderInTOC(options = {}): boolean {
+// export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue' ] } = {}): boolean {
+  const { urlContainList = [], headerSelector } = Object.assign({
+    urlContainList: [ 'hide_header_in_toc' ],
+    headerSelector: '.site-header',
+  }, options);
+  let isIncludeUrls = false;
+  if (urlContainList.length === 0) {
+    isIncludeUrls = true;
+  } else {
+    isIncludeUrls = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
+  }
   const isEzTocContainerDomExist = document.querySelector('#ez-toc-container');
   const isHideHeader = isIncludeUrls || isEzTocContainerDomExist;
-  const SiteHeaderDom: any = document.querySelector('.site-header');
+  const SiteHeaderDom = document.querySelector(headerSelector);
+  if (!SiteHeaderDom) return false;
   // Handle Event
   function handleScroll () {
+    if (!SiteHeaderDom) return;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     const visibility = SiteHeaderDom.style.visibility;
-    // console.log('scrollTop', scrollTop);
-    // console.log('SiteHeaderDom.style.visibility', visibility);
     if (scrollTop > 100) {
       if (visibility !== 'hidden') SiteHeaderDom.style.visibility = 'hidden';
     } else {
@@ -30,7 +41,6 @@ export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue
     window.addEventListener('scroll', throttle(handleScroll, 50, { leading: true }));
     // Init when page loaded
     setTimeout(() => {
-      // console.log('Init when page loaded');
       handleScroll();
     }, 25);
     return true;
@@ -41,13 +51,23 @@ export function hideHeaderInTOC({ urlContainList = [ 'urlContainListDefaultValue
 /**
  * Hide sidebar.
  * 
- * @param {Array} urlContainList string list
- * @return {Boolean} true or false
+ * @param {array} options.urlContainList string list
+ * @param {string} options.primarySelector string
+ * @param {string} options.secondarySelector string
+ * @return {boolean} true or false
  */
-export function hideSidebar({ urlContainList = [ 'hide_sidebar' ] } = {}): boolean {
+export function hideSidebar(options = {}): boolean {
+// export function hideSidebar({ urlContainList = [ 'hide_sidebar' ] } = {}): boolean {
+  const { urlContainList = [], primarySelector, secondarySelector } = Object.assign({
+    urlContainList: [ 'hide_sidebar' ],
+    primarySelector: '#primary',
+    secondarySelector: '#secondary',
+  }, options);
   const isHideSidebar = urlContainList.some(urlContainString => isIncludeInUrl({ urlContainString }));
-  const secondaryDom: any = document.querySelector('#secondary');
-  const primaryDom: any = document.querySelector('#primary');
+  const secondaryDom = document.querySelector(secondarySelector);
+  if (!secondaryDom) return false;
+  const primaryDom = document.querySelector(primarySelector);
+  if (!primaryDom) return false;
   if (isHideSidebar && secondaryDom && primaryDom) {
     secondaryDom.style.display = 'none';
     primaryDom.style.width = '100%';
@@ -59,16 +79,18 @@ export function hideSidebar({ urlContainList = [ 'hide_sidebar' ] } = {}): boole
 /**
  * Determine the result of including the string.
  * 
- * @param {String} urlContainString content
- * @return {Boolean} true or false
+ * @param {string} options.urlContainString content
+ * @return {boolean} true or false
  */
- export function isIncludeInUrl({ urlContainString = '' } = {}): boolean {
+export function isIncludeInUrl(options = {}): boolean {
+// export function isIncludeInUrl({ urlContainString = '' } = {}): boolean {
+  const { urlContainString = '' } = Object.assign({
+    urlContainString: '',
+  }, options);
   const Url = location.href;
   return Url.includes(urlContainString);
 }
 
-// Use jQuery, If window.jQuery or window.$ doesn't exist, return false.
-// When a <img> element src has the parameter `width` or `height`, the image should be set style/css width or height.
 /**
  * Set img width and height.
  * 
@@ -80,7 +102,7 @@ export function hideSidebar({ urlContainList = [ 'hide_sidebar' ] } = {}): boole
  * window.jQuery('xxxx').width('400rem')
  * window.jQuery('xxxx').height('200vw')
  * 
- * @return {Boolean} true or false
+ * @return {boolean} true or false
  */
 export function setImgWidthHeight(): boolean {
   const $ = window.jQuery || window.$;

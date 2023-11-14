@@ -10,3 +10,7 @@ interface Window {
   $: any;
   jQuery: any;
 }
+
+interface Element {
+  style: any;
+}
