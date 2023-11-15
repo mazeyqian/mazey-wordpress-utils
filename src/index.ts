@@ -3,11 +3,6 @@
 import { throttle } from 'mazey';
 
 /**
- * The variable that stores whether the function has been run before.
- */
-let loadedSetImgLazyLoading = false;
-
-/**
  * Set the 'loading' attribute of all images within a specified element to 'lazy', enabling lazy loading. 
  * The function only runs once after the page has loaded.
  * 
@@ -25,13 +20,9 @@ export function setImgLazyLoadingWhenDomReady(selector = '.site-content'): boole
     images.forEach(image => {
       image.setAttribute('loading', 'lazy');
     });
-  }
-  if (loadedSetImgLazyLoading === false) {
-    window.addEventListener('DOMContentLoaded', handleLoad);
-    loadedSetImgLazyLoading = true;
     return true;
   }
-  return false;
+  return handleLoad();
 }
 
 /**
