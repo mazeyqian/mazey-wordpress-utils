@@ -3,6 +3,43 @@
 import { throttle } from 'mazey';
 
 /**
+ * The variable that stores whether the function has been run before.
+ */
+let loadedSetImgLazyLoading = false;
+
+/**
+ * Set the 'loading' attribute of all images within a specified element to 'lazy', enabling lazy loading. 
+ * The function only runs once after the page has loaded.
+ * 
+ * ```javascript
+ * setImgLazyLoadingWhenDomReady('.site-content');
+ * ```
+ * 
+ * @param selector - CSS selector for the element that contains the images. Default is '.site-content'.
+ * @returns {boolean} - Returns `true` if the function was able to set the images' lazy loading and it hasn't been run before, `false` otherwise.
+ */
+export function setImgLazyLoadingWhenDomReady(selector = '.site-content'): boolean {
+  const images = document.querySelectorAll(`${selector} img`);
+  if (images.length === 0) return false;
+  function handleLoad () {
+    images.forEach(image => {
+      image.setAttribute('loading', 'lazy');
+    });
+  }
+  if (loadedSetImgLazyLoading === false) {
+    window.addEventListener('DOMContentLoaded', handleLoad);
+    loadedSetImgLazyLoading = true;
+    return true;
+  }
+  return false;
+}
+
+/**
+ * The variable that stores whether the header has been hidden.
+ */
+let loadedHideHeaderInTOC = false;
+
+/**
  * Hide the header when it meets one of these two conditions:
  * 
  * - Use WordPress Plugin [Easy Table of Contents](https://wordpress.org/plugins/easy-table-of-contents/) and open it in this page.
@@ -48,13 +85,14 @@ export function hideHeaderInTOC(options = {}): boolean {
       if (visibility !== 'visible') SiteHeaderDom.style.visibility = 'visible';
     }
   }
-  if (isHideHeader && SiteHeaderDom) {
+  if (isHideHeader && SiteHeaderDom && loadedHideHeaderInTOC === false) {
     // Listen
     window.addEventListener('scroll', throttle(handleScroll, 50, { leading: true }));
     // Init when page loaded
     setTimeout(() => {
       handleScroll();
     }, 25);
+    loadedHideHeaderInTOC = true;
     return true;
   }
   return false;
