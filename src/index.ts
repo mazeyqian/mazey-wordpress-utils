@@ -19,9 +19,9 @@ let loadedSetImgLazyLoading = false;
  * @returns {boolean} - Returns `true` if the function was able to set the images' lazy loading and it hasn't been run before, `false` otherwise.
  */
 export function setImgLazyLoadingWhenDomReady(selector = '.site-content'): boolean {
-  const images = document.querySelectorAll(`${selector} img`);
-  if (images.length === 0) return false;
   function handleLoad () {
+    const images = document.querySelectorAll(`${selector} img`);
+    if (images.length === 0) return false;
     images.forEach(image => {
       image.setAttribute('loading', 'lazy');
     });

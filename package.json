@@ -19,11 +19,14 @@
     "url": "git+https://github.com/mazeyqian/mazey-wordpress-utils.git"
   },
   "keywords": [
-    "wordpress",
-    "utilities",
-    "lazyload",
-    "javascript",
-    "function"
+    "WordPress",
+    "Utilities",
+    "Utils",
+    "LazyLoad",
+    "Lazy",
+    "Loading",
+    "JavaScript",
+    "Function"
   ],
   "author": "Cheng",
   "license": "MIT",
