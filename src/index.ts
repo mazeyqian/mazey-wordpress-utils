@@ -1,5 +1,3 @@
-/* Function */
-
 import { throttle } from 'mazey';
 
 /**
