@@ -1,4 +1,4 @@
-# Mazey Wordpress Utils
+# Mazey WordPress Utils
 
 [![NPM version][npm-image]][npm-url]
 [![l][l-image]][l-url]
