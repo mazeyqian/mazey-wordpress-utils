@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 /* eslint-disable no-undef */
-import { setImgLazyLoadingWhenDomReady, hideHeaderInTOC, hideSidebar, isIncludeInUrl, setImgWidthHeight } from '../src/index.ts';
+import { setImgLazyLoadingWhenDomReady, hideSidebar, isIncludeInUrl, setImgWidthHeight } from '../src/index.ts';
 
 describe('setImgLazyLoadingWhenDomReady', () => {
   test('should set loading attribute to lazy for all images within the specified element', () => {
