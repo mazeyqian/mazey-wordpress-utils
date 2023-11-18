@@ -1,6 +1,7 @@
 import {
-  hideHeaderInTOC
+  setCopyBtnForAllTagP
  } from './index';
 
-// 测试
-console.log('Test:', hideHeaderInTOC({ urlContainList: [ '8080' ] }));
+const res = setCopyBtnForAllTagP();
+
+console.log("Test Result: %o", res);
