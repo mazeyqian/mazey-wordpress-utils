@@ -2,6 +2,7 @@
 build/
 node_modules/
 test/
+scripts/
 .idea
 .vscode
 *.suo

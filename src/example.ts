@@ -4,4 +4,3 @@ import {
 
 // 测试
 console.log('Test:', hideHeaderInTOC({ urlContainList: [ '8080' ] }));
-
