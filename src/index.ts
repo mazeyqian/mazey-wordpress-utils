@@ -1,4 +1,31 @@
 import { throttle } from 'mazey';
+import copy from 'copy-to-clipboard';
+
+/**
+ * Sets a copy button for all <p> tags within the specified element.
+ * The copy button allows users to copy the text content of the <p> tag.
+ * 
+ * @returns {boolean} True if the copy buttons were successfully set, false otherwise.
+ */
+export function setCopyBtnForAllTagP(): boolean {
+  const allTagP = document.querySelectorAll('.entry-content p');
+  if (!allTagP || allTagP.length === 0) return false;
+  allTagP.forEach(p => {
+    const text = p.innerText;
+    const btn = document.createElement('button');
+    btn.innerText = 'Copy';
+    btn.classList.add('mazey-wp-btn-copy');
+    btn.addEventListener('click', () => {
+      copy(text);
+      btn.innerText = 'Copied';
+      setTimeout(() => {
+        btn.innerText = 'Copy';
+      }, 1000);
+    });
+    p.appendChild(btn);
+  });
+  return true;
+}
 
 /**
  * Set the 'loading' attribute of all images within a specified element to 'lazy', enabling lazy loading. 

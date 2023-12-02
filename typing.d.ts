@@ -2,9 +2,7 @@
 // declare namespace navigator {
 //   let connection: string;
 // }
-
-// mazey
-// declare module 'mazey';
+declare module 'copy-to-clipboard';
 
 interface Window {
   $: any;
@@ -13,4 +11,5 @@ interface Window {
 
 interface Element {
   style: any;
+  innerText: string;
 }

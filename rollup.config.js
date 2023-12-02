@@ -39,7 +39,7 @@ export default [
         ],
       }),
     ],
-    external: [ 'mazey' ]
+    external: [ 'mazey', 'copy-to-clipboard' ],
   },
   {
     input: 'src/polyfill.js',

@@ -1,4 +1,11 @@
 /**
+ * Sets a copy button for all <p> tags within the specified element.
+ * The copy button allows users to copy the text content of the <p> tag.
+ *
+ * @returns {boolean} True if the copy buttons were successfully set, false otherwise.
+ */
+export declare function setCopyBtnForAllTagP(): boolean;
+/**
  * Set the 'loading' attribute of all images within a specified element to 'lazy', enabling lazy loading.
  * The function only runs once after the page has loaded.
  *
