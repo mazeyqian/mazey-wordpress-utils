@@ -83,6 +83,6 @@
     "@babel/runtime-corejs3": "7.11.2",
     "copy-to-clipboard": "^3.3.3",
     "core-js": "3.6.5",
-    "mazey": "^3.11.5"
+    "mazey": "^4.7.12"
   }
 }
